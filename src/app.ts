@@ -17,7 +17,7 @@ import {jsonSchema} from "ai"; // or another converter library
 const app = express();
 
 // Get secret from command line args for optional authentication
-const secret = process.argv.find(arg => arg.startsWith('--secret='))?.split('=')[1];
+const secret = process.argv.find(arg => arg.startsWith('--secret='))?.split('=')[1]  || process.env.DEFAULT_SECRET;
 
 
 app.use(cors());
